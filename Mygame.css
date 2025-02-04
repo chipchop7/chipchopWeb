@@ -1,0 +1,49 @@
+/*mainのスタイル*/
+
+p.clickplay{
+    text-align: center; /* テキストを中央揃えにする */
+  }
+
+p.webexplanation{
+  font-size: 30px;
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+  .gamelist {
+    display: flex; /* 横並びにする */
+    flex-wrap: wrap; /* 折り返しを有効にする */
+    justify-content: center; /* 中央寄せに配置 */
+    gap: 20px; /* 画像間のスペースを設定 */
+    padding: 0; /* 不要な余白を消去 */
+    margin: 0; /* 不要な余白を消去 */
+}
+
+.gamelist li {
+    list-style: none; /* リストマーカーを非表示にする */
+    text-align: center; /* テキストを中央揃えにする */
+    padding: 10px 20px; /*余白*/
+    background: #e3f6f5; /*背景色*/
+    border-top: solid 1px #3dbfb8; /*枠線・上*/
+    border-bottom: solid 1px #3dbfb8; /*枠線・下*/
+    border-right: solid 1px #3dbfb8; /*枠線・右*/
+    border-left: solid 1px #3dbfb8; /*枠線・左*/
+}
+
+img.Gametitle {
+    max-width: 500px; /* 画像の最大幅を制限 */
+    height: auto; /* 縦横比を保持 */
+    transition: transform 0.3s ease; /* ホバー時のアニメーション */
+    border: solid black 1px; /* 枠線を追加 */
+}
+
+img.Gametitle:hover {
+    transform: scale(1.05); /* ホバー時に拡大 */
+    opacity: 0.8; /* 透明度の調整 */
+}
+
+main p1{
+  font-size: 25px;
+}
+  main p{
+    font-size: 20px;
+  }
