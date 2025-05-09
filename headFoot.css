@@ -1,3 +1,38 @@
+/* スマホ (最大幅 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  header, footer {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* タブレット (768px から 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+    padding: 20px;
+  }
+  header, footer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+/* PC (1024px 以上) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+    padding: 30px;
+  }
+  header, footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 /*headerのスタイル*/
   header{
