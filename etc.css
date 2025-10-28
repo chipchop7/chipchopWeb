@@ -1,0 +1,133 @@
+/* --- etc.html 専用スタイル --- */
+
+main {
+    max-width: 900px; /* メインコンテンツの最大幅 */
+    margin: 0 auto; /* 中央揃え */
+    padding: 20px;
+}
+
+/* セクションの共通見出し */
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f4f8;
+}
+
+/* --- 1. 資格セクション --- */
+.qualifications-list {
+    display: flex;
+    flex-wrap: wrap; /* 折り返し */
+    justify-content: center; /* 中央揃え */
+    gap: 15px; /* タグ間の隙間 */
+    list-style: none;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.qualifications-list li {
+    background-color: #f0f4f8; /* 薄い背景色 */
+    padding: 10px 20px;
+    border-radius: 20px; /* 角を丸くしてタグ風に */
+    font-weight: bold;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 2. タイムライン（開発経験） --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* タイムラインの縦線 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* 左端に線を配置 */
+    width: 4px;
+    background-color: #e9ecef;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 50px; /* 線の左側にスペースを確保 */
+}
+
+/* タイムラインの丸（ドット） */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 11px; /* (線の幅 4px / 2) + 線の左位置 20px - (ドット幅 18px / 2) */
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 4px solid #3dbfb8; /* サイトのテーマカラー（Mygame.cssから拝借） */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* fade-in アニメーション（headFoot.cssから移動） */
+/* .fade-in クラスを持つ要素に適用 */
+.timeline-item.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.timeline-item.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10px; /* 線を左に寄せる */
+    }
+    .timeline-item {
+        padding-left: 35px; /* コンテンツを左に寄せる */
+    }
+    .timeline-item::before {
+        left: 0px; /* ドットを左に寄せる */
+        width: 16px;
+        height: 16px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
