@@ -1,52 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chipchop7_etc</title>
+    <title>Etc - chipWeb</title>
     <link rel="stylesheet" href="headFoot.css">
+    
+    <link rel="stylesheet" href="etc.css">
 </head>
+
 <body>
 
-    <header>
-  <h1>  chipWeb  </h1>
-  <nav>
-    <ul>
-
-      <li>
-        <a href="https://chipchop7.github.io/chipchopWeb/index.html">home</a>
-      </li>
-
-      <li>
-        <a href="https://chipchop7.github.io/chipchopWeb/etc.html"><font color="red">etc</font></a>
-      </li>
-
-      <li>
-        <a href="https://chipchop7.github.io/chipchopWeb/Mygame.html">Mygame</a>
-      </li>
-
-      <li>
-        <a href="https://www.373official.com"><img src="picture/minami.jpg" class="minami_button"></a>
-      </li>
-
-    </ul>
-  </nav>
+<header>
+    <h1>  chipWeb  </h1>
+    <button class="hamburger-button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="main-nav"> <ul>
+            <li>
+                <a href="/">home</a> 
+            </li>
+            <li>
+                <a href="/etc.html" class="active">etc</a>
+            </li>
+            <li>
+                <a href="/Mygame.html">Mygame</a>
+            </li>
+            <li>
+                <a href="https://373official.com"><img src="picture/minami.jpg" class="minami_button"></a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<br>
-<br>
-<br>
-<br>
 
-<!---------------------------------------------------------------------------------------------------------------------------->
-
+        <br>
+        <br>
+        <br>
+        <br>
 <main>
-</main>
+    
+    <section class="qualifications-section fade-in">
+        <h2 class="section-title">資格</h2>
+        <ul class="qualifications-list">
+            <li>第一級陸上特殊無線技術士</li>
+            <li>第三級アマチュア無線技士</li>
+            <li>第二種電気工事士</li>
+            <li>普通自動車第一種運転免許</li>
+        </ul>
+    </section>
 
-<!---------------------------------------------------------------------------------------------------------------------------->
+    <section class="experience-section">
+        <h2 class="section-title">開発経験・研究実績</h2>
+        
+        <div class="timeline">
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>Unityによる個人ゲーム制作</h3>
+                    <p>Unity C# を用いた個人のゲーム制作活動を行いました。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>C言語 基礎学習と応用</h3>
+                    <p>授業でC言語を学び、リングバッファ、スタック、ポインタなどを活用したプログラムを経験しました。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>マーベラスゲームジャム202408優秀賞受賞</h3>
+                    <p>「芝PUT」というチームでリーダーとしてゲームジャムに参加し、Unityで3日間のゲーム制作を経験。優秀賞を頂きました。
+                        <br>
+                        <a href="https://gamejam.marv.jp/202408/index.html" target="_blank" rel="noopener noreferrer">
+                            → 特設サイトはこちら
+                        </a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>アマチュア無線交信ログ管理ソフト</h3>
+                    <p>PythonライブラリTkinterを使い、簡単なログ記録ソフトを自作。この開発を通じてPythonの基礎を習得しました。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>部室間 内線システムの構築</h3>
+                    <p>VoIPルータとSIPサーバ(Asterisk)を使用。アナログ電話をIP電話に変換し、部室間の内線通話システムを実装しました。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>部活動用 鍵管理Botの開発</h3>
+                    <p>Pythonで開発。部室の鍵と部車の使用状況を管理するDiscord Botです。部室のUbuntu Server上でsystemdを用いて実行しています。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>C++を使ったCLIゲーム</h3>
+                    <p>C++の標準ライブラリのみを使い、2日間でコマンドラインベースのゲームを制作しました。</p>
+                </div>
+            </div>
+    </section>
+    
+    </main>
 
 <footer>
   <p>© 2025 chipchop7</p>
 </footer>
+
+<script src="main.js"></script>
 
 </body>
 </html>
