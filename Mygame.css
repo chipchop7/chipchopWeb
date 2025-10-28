@@ -19,21 +19,45 @@ p.webexplanation{
 }
 
 .gamelist li {
-    list-style: none; /* リストマーカーを非表示にする */
-    text-align: center; /* テキストを中央揃えにする */
-    padding: 10px 20px; /*余白*/
-    background: #e3f6f5; /*背景色*/
-    border-top: solid 1px #3dbfb8; /*枠線・上*/
-    border-bottom: solid 1px #3dbfb8; /*枠線・下*/
-    border-right: solid 1px #3dbfb8; /*枠線・右*/
-    border-left: solid 1px #3dbfb8; /*枠線・左*/
+    list-style: none;
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px; 
+    box-sizing: border-box; 
+    
+    /* --- ↓ここからアニメーション用のCSSを追加↓ --- */
+    
+    /* 1. 最初は透明で、少し下にズラしておく */
+    opacity: 0;
+    transform: translateY(20px); /* 20px下に配置 */
+
+    /* 2. opacityとtransformが 0.6秒かけて変化するように設定 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 3. JSによってこのクラスが付くと、表示される */
+.gamelist li.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* 元の位置に戻る */
+}
+/* --- ↑ここまで追加↑ --- */
+
+
+/* ホバー時のスタイル (前回提案したもの) */
+.gamelist li:hover {
+    transform: translateY(-5px); /* アニメーション後もホバーは機能します */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 img.Gametitle {
-    max-width: 500px; /* 画像の最大幅を制限 */
+    max-width: 100%; /* 300pxのカード幅に合わせる */
     height: auto; /* 縦横比を保持 */
     transition: transform 0.3s ease; /* ホバー時のアニメーション */
     border: solid black 1px; /* 枠線を追加 */
+    border-radius: 4px; /* 画像の角を少し丸める */
 }
 
 img.Gametitle:hover {
@@ -41,9 +65,17 @@ img.Gametitle:hover {
     opacity: 0.8; /* 透明度の調整 */
 }
 
-main p1{
-  font-size: 25px;
+/* --- ↓HTMLの <p1> を <h3> に変更したため、スタイルを追加↓ --- */
+
+.gamelist li h3 {
+    font-size: 25px; /* <p1> に設定していたサイズ */
+    margin-top: 15px; /* 画像との余白 */
+    margin-bottom: 10px; /* 説明文との余白 */
+    color: #333;
 }
-  main p{
-    font-size: 20px;
-  }
+
+.gamelist li p {
+    font-size: 20px; /* <p> に設定していたサイズ */
+    margin: 0; /* pタグのデフォルトマージンをリセット */
+    color: #555; /* 説明文の色 */
+}
