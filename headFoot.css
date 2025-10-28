@@ -1,3 +1,8 @@
+/* ヘッダー裏に隠れるのを防ぐスタイル */
+main {
+    padding-top: 80px; 
+}
+
 /* デフォルト（PC向け） */
 header {
     display: flex;
@@ -6,10 +11,12 @@ header {
     background-image: url("picture/header.png");
     color: black;
     position: fixed;
+    top: 0;
     width: 100%;
     font-size: 18px;
     z-index: 5;
     opacity: 0.8;
+    box-sizing: border-box; 
 }
 
 header h3 {
@@ -34,6 +41,12 @@ nav ul li a:hover {
     color: greenyellow;
 }
 
+/* アクティブなページのリンク色 */
+nav ul li a.active {
+    color: red;
+    font-weight: bold;
+}
+
 img.minami_button {
     font-size: 10px;
     width: 20%;
@@ -53,4 +66,207 @@ footer {
     background-color: rgb(59, 59, 59);
     color: black;
     z-index: 5;
+}
+
+/* --- ハンバーガーメニュー (PCでは非表示) --- */
+.hamburger-button {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100; 
+}
+
+.hamburger-button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* --- 3. スマホ表示（768px以下）のスタイル --- */
+@media (max-width: 768px) {
+
+    header {
+        justify-content: space-between; 
+        padding: 10px 20px;
+        opacity: 1.0; 
+        box-sizing: border-box;
+    }
+    
+    main {
+        padding-top: 70px; 
+    }
+
+    .hamburger-button {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto; 
+        background-color: rgba(255, 255, 255, 0.95); 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        padding-top: 70px; 
+        padding-bottom: 20px; 
+        transform: translateY(-100%);
+        transition: transform 0.4s ease; 
+        z-index: 99;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .main-nav ul li {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .main-nav ul li a {
+        padding: 10px 0; 
+        display: block;
+        color: #333; 
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .main-nav ul li a:hover {
+        color: greenyellow;
+    }
+    .main-nav ul li a.active {
+        color: red; 
+    }
+    img.minami_button {
+        margin-top: 10px;
+        width: 60px; 
+        height: auto;
+    }
+    
+    .main-nav.is-active {
+        transform: translateY(0); 
+    }
+
+    .hamburger-button.is-active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger-button.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-button.is-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+
+/* --- スクロールアニメーション (共通) --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- タイピングエフェクト (etc.html用) --- */
+/* (削除されていたらこのブロックは不要です) */
+.typing-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; 
+    font-size: 2.5rem; 
+    color: #555;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 0 20px;
+}
+.typing-placeholder::after {
+    content: '_';
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- home.html 専用スタイル --- */
+
+/* 1. ヒーローセクション */
+.hero {
+    height: 25vh; 
+    min-height: 180px; 
+    background-color: #f0f4f8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -80px; 
+}
+
+.hero h2 {
+    font-size: 3rem; 
+    color: #333;
+    /* ↓↓ ここにあった opacity: 0 と transform を削除済み ↓↓ */
+}
+
+/* スマホ用のヒーローセクション調整 */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: -70px; 
+        height: 20vh; 
+        min-height: 150px; 
+    }
+    .hero h2 {
+        font-size: 2rem; 
+    }
+}
+
+
+/* 2. プロフィールカード */
+.profile-card {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px; 
+    margin: 40px auto; 
+    /* ↓↓ ここにあった opacity: 0 と transform を削除済み ↓↓ */
+}
+
+.profile-card h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f4f8; 
+    padding-bottom: 10px;
+}
+
+.profile-card dl {
+    margin: 0;
+}
+
+.profile-card dt { 
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+    margin-top: 15px; 
+}
+
+.profile-card dd { 
+    margin-left: 0; 
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
